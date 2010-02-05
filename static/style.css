@@ -1,0 +1,141 @@
+a:link {color:#00a;}
+
+a:visited {color:#00a;}
+
+a:active {color:blue;}
+
+a:hover, a.subfoot:hover, a.linknav:hover, a.sublinknav:hover {color:blue;text-decoration:underline;}
+
+body {
+	margin:0px;
+	padding: 0px;
+	background:#ddd;
+	font-family: "Trebuchet MS",verdana,sans-serif;
+	font-size: 14px;
+	color:#333;
+}
+
+.container {
+    margin-top:20px;
+	margin-right:50px;
+	margin-left:50px;
+	background:white;
+	border-top:1px solid #666;
+	border-left:1px solid #666;
+	border-right:1px solid #666;
+	border-bottom:1px solid #666;
+    background-color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+h1, h2, h3, h4, pre {
+	line-height:140%;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+p {
+	line-height:120%;
+}
+
+h2 {
+	font-size:18px;
+}
+
+h3 {
+	font-size:16px;
+}
+
+h3.highlight {
+    background-color: #dddddd;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #888888;
+}
+
+.byline {
+    font-size: 10pt;
+    font-weight: normal;
+}
+
+.header {
+	padding-top:40px;
+	background-color: #5e715e;
+	border-bottom:1px solid white;
+}
+
+.nav	{
+	background-color:#8EA48E;
+}
+
+.footer {
+	font-size: 10px;
+	text-align: right;
+}
+
+a.subfoot {
+	font-size:11px;
+	color:#666;
+}
+
+.small {
+    font-size: 10px;
+}
+
+.callout {
+    width : 182px;
+	float : right;
+	margin: 0px 20px 20px 20px;
+	padding: 2px;
+}
+
+h4 {
+    font-size: 14px;
+    display: inline;
+}
+
+h5 {
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.codeblock {
+      font-family:"Courier";
+      background-color: lightyellow;
+      white-space: pre;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-left: 15px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 15px;
+      border: 1px dotted black;
+      font-size: 11px;
+      line-height: 120%;
+}
+
+.highlightedcode {
+    color: red;
+    font-weight: bold;
+}
+
+#test {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 400px;
+    width: 100px;
+    background: white;
+    border: 3px solid black;
+    overflow: hidden;
+    z-index: 9999;
+    background-color: #ddd;
+    padding: 0px;
+	font-family: "Trebuchet MS",verdana,sans-serif;
+	font-size: 10px;
+    color: black;
+}

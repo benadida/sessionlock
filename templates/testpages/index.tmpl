@@ -1,0 +1,70 @@
+#from base import utils,config
+#import cherrypy
+#include "../templates/header.tmpl"
+
+<script language="javascript">
+function go_get(url, target) {
+  \$(target).innerHTML = 'doing AJAX';
+  xh = new XMLHttpRequest();
+
+  xh.onreadystatechange = function(req) {
+	if (xh.responseText)
+	    \$(target).innerHTML = xh.responseText;
+  };
+
+  xh.open('get',url, true);
+  xh.send();
+
+  return false;
+};
+</script>
+
+<h1>Test Page $num</h1>
+part of <a href="../">SessionLock</a>
+<hr />
+
+<br /><br />
+#if $var1
+var1 = $var1<br />
+#end if
+
+#if $var2
+var2 = $var2<br />
+#end if
+
+#if $var3
+var3 = $var3<br />
+#end if
+
+<h2>Link</h2>
+<a href="?num=${num+1}">go to the next test page</a>
+<br /><br />
+
+<h2>Form</h2>
+<form method="post" action="./one">
+<input type="hidden" name="var1" value="value1" />
+<input type="text" name="num" value="${num+1}" />
+<input type="hidden" name="var3" value="value3" />
+<input type="submit" value="go" />
+<input type="hidden" name="var2" value="value2" />
+</form>
+<br /><br />
+
+<h2>AJAX</h2>
+<input type="button" onclick="return go_get('/testpages/ajax?num=${num+1}', 'result');" value="go" />
+
+<div id="result">
+AJAX result will go here.
+</div>
+
+<br /><br />
+#if cherrypy.serving.LOCKSESSION_STATUS
+<span style="color:green; font-size: 2em;">SERVER-SIDE VERIFIED!</span>
+#else
+<span style="color:red; font-size: 2em;">SERVER-SIDE FAILED!</span>
+<br />
+<a href="../">go get a fresh session</a>
+#end if
+
+
+#include "../templates/footer.tmpl"

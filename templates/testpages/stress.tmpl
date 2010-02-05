@@ -1,0 +1,41 @@
+#from base import utils,config
+#import cherrypy
+#include "../templates/header.tmpl"
+
+<script language="javascript">
+function stress_test(num) {
+    var start = new Date();
+    for (var i=0; i <num; i++) {
+	LockSession.setupPage();
+    }
+    var end = new Date();
+    return end-start;
+}
+</script>
+
+<h1>Stress Test</h1>
+part of <a href="../">SessionLock</a>
+<hr />
+
+#for i in range(100)
+<a href="stress?num=${i}">link #$i</a><br />
+#end for
+
+#for i in range(10)
+<form method="post" action="stress">
+<input type="hidden" name="num" value="${i}" />
+<input type="submit" value="go" />
+</form>
+#end for
+
+
+<script language="javascript">
+    var old_onload = window.onload;
+    window.onload = function() {
+	old_onload();
+	var result = stress_test(1000);
+	alert(result);
+    }
+</script>
+
+#include "../templates/footer.tmpl"

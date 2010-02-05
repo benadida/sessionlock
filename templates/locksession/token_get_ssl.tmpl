@@ -1,0 +1,11 @@
+<script src="/static/mootools.js"></script>
+<script language="javascript">
+SSL_PREFIX = "https://";
+var token=Cookie.get('token');
+if (!token || token == '') {
+    alert('no token, going to get one for host ' + document.location.hostname);
+    document.location.replace(SSL_PREFIX + document.location.hostname + '/locksession/token_setup?return_url=' + encodeURIComponent(document.location));
+} else {
+    document.location.replace('http://' + document.location.hostname + '/locksession/token_get#' + token);
+}
+</script>
